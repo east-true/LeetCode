@@ -1,12 +1,8 @@
 func sortedSquares(nums []int) []int {
-    for i := range nums {
-		if nums[i] < 0 {
-			nums[i] *= -1
-		}
-        
-        nums[i] *= nums[i]
+	for i := range nums {
+		nums[i] = int(uint(nums[i]) * uint(nums[i]))
 	}
-    
-    sort.Ints(nums)
-    return nums
+
+	sort.Ints(nums)
+	return nums
 }
