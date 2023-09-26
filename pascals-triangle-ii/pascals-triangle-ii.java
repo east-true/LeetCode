@@ -1,6 +1,5 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
-        List<List<Integer>> tree = new ArrayList<>();
         List<Integer> leaf = new ArrayList<>();
         for (int i = 0; i < rowIndex+1; i++) {
             int prev = 1;
@@ -10,10 +9,8 @@ class Solution {
                 leaf.set(j, prev + curr);
                 prev = curr;
             }
-
-            tree.add(new ArrayList<>(leaf));
         }
 
-        return tree.get(tree.size()-1);
+        return leaf;
     }
 }
