@@ -11,16 +11,16 @@ func heightChecker(heights []int) int {
 }
 
 func sort(heights []int) []int {
-    expected := make([]int, len(heights))
-    copy(expected, heights)
-    for i := 0; i < len(expected); i++ {
-        for j := i+1; j < len(expected); j++ {
-            if expected[i] > expected[j] {
-                k := expected[i]
-                expected[i] = expected[j]
-                expected[j] = k
+    copied := make([]int, len(heights))
+    copy(copied, heights)
+    for i := 0; i < len(copied); i++ {
+        for j := i+1; j < len(copied); j++ {
+            if copied[i] > copied[j] {
+                k := copied[i]
+                copied[i] = copied[j]
+                copied[j] = k
             }
         }
     }
-    return expected
+    return copied
 }
