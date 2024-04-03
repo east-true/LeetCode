@@ -1,17 +1,12 @@
 func lengthOfLongestSubstring(s string) int {
-	subarr := []string{}
+	max := 0
 	for s != "" {
 		n, sub := GetSubstring(s)
 		if n != 0 {
-			subarr = append(subarr, sub)
+			if max < len(sub) {
+				max = len(sub)
+			}
 			s = s[1:]
-		}
-	}
-
-	max := 0
-	for _, sub := range subarr {
-		if max < len(sub) {
-			max = len(sub)
 		}
 	}
 
